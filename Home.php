@@ -30,6 +30,9 @@
           <li class="nav-item">
             <a class="nav-link" href="#">History</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Profile</a>
+          </li>
     </ul>
  <!-- dark -->
 
@@ -48,6 +51,16 @@
  <div class="card-body">
    <h5 class="card-title">Account</h5>
    <p class="card-text">Your account balance is: Rs. --- </p>
+ </div>
+</div>
+
+
+<div class="card" id="Balance" style="width: 18rem;">
+ <div class="card-body">
+   <h5 class="card-title">Profile</h5>
+   <p class="card-text">Name: </p>
+   <p class="card-text">License number: </p>
+   <p class="card-text">Address: </p>
  </div>
 </div>
 
