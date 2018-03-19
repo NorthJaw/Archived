@@ -8,7 +8,7 @@
 
 
     }
-    
+
 
     $toll_gate = $db->select("SELECT * FROM  `toll_data` ORDER BY RAND() LIMIT 1");
 
@@ -68,6 +68,9 @@ foreach ($toll_gate as $instance){
           <li class="nav-item">
             <a class="nav-link" href="#">Profile</a>
           </li>
+            <li class="nav-item">
+                <a class="nav-link" href="LoginPage.php">Logout</a>
+            </li>
     </ul>
  <!-- dark -->
 
