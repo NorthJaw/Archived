@@ -1,14 +1,11 @@
 <?php
     require 'dbclass.php';
+    session_start();
+
+
     $db = new Db();
 
-    if(!empty($_POST['id']) &&  isset($_POST['id']) ){
-
-        $id = $_POST['id'];
-
-
-    }
-
+     $id = $_SESSION['id'];
 
     $toll_gate = $db->select("SELECT * FROM  `toll_data` ORDER BY RAND() LIMIT 1");
 
@@ -30,6 +27,7 @@ foreach ($toll_gate as $instance){
         $tg_charge = $instance['charge'];
     }
 
+    $_SESSION['money_to_deduct'] = $tg_charge;
 ?>
 
 
@@ -69,7 +67,7 @@ foreach ($toll_gate as $instance){
             <a class="nav-link" href="#">Profile</a>
           </li>
             <li class="nav-item">
-                <a class="nav-link" href="LoginPage.php">Logout</a>
+                <a class="nav-link" href="logout.php">Logout</a>
             </li>
     </ul>
  <!-- dark -->
@@ -79,7 +77,7 @@ foreach ($toll_gate as $instance){
   <div class="card-body">
     <h5 class="card-title">Payment!</h5>
     <p class="card-text">Pay amount: <?php echo $tg_charge; ?> Rs at <?php echo $tg_name; ?> toll gate</p>
-    <a href="#" class="card-link">Pay</a>
+    <a href="makepayment.php" class="card-link">Pay</a>
     <a href="#" class="card-link">Close</a>
   </div>
 </div>

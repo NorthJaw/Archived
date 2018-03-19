@@ -19,7 +19,7 @@
 
   <body>
 
-		<form id="Login" action="Home.php" method="post">
+		<form id="Login" action="middlepage.php" method="post">
 			  <div class="form-group">
 			    <label for="exampleInputEmail1">User ID</label>
 			    <input type="text" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter User ID">
