@@ -1,9 +1,31 @@
 <?php
     require 'dbclass.php';
     $db = new Db();
+
+    if(!empty($_POST['id']) &&  isset($_POST['id']) ){
+
+        $id = $_POST['id'];
+
+
+    }
+    
+
     $toll_gate = $db->select("SELECT * FROM  `toll_data` ORDER BY RAND() LIMIT 1");
 
-    foreach ($toll_gate as $instance){
+    $user_data = $db->select("SELECT * FROM `alpr_data` WHERE `id` =" .$id);
+
+
+foreach ($user_data as $ins) {
+    $user_name = $ins['name'];
+    $user_address = $ins['address'];
+    $user_wallet = $ins['wallet'];
+    $user_license = $ins['license'];
+}
+
+
+
+
+foreach ($toll_gate as $instance){
         $tg_name = $instance['location'];
         $tg_charge = $instance['charge'];
     }
@@ -63,7 +85,7 @@
 <div class="card" id="Balance" style="width: 18rem;">
  <div class="card-body">
    <h5 class="card-title">Account</h5>
-   <p class="card-text">Your account balance is: Rs. --- </p>
+   <p class="card-text">Your account balance is: Rs. <?php echo $user_wallet ?> </p>
  </div>
 </div>
 
@@ -71,9 +93,9 @@
 <div class="card" id="Balance" style="width: 18rem;">
  <div class="card-body">
    <h5 class="card-title">Profile</h5>
-   <p class="card-text">Name: </p>
-   <p class="card-text">License number: </p>
-   <p class="card-text">Address: </p>
+   <p class="card-text">Name: <?php echo $user_name ?></p>
+   <p class="card-text">License number: <?php echo $user_license ?></p>
+   <p class="card-text">Address: <?php echo $user_address ?></p>
  </div>
 </div>
 

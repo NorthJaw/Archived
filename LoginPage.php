@@ -19,10 +19,10 @@
 
   <body>
 
-		<form id="Login">
+		<form id="Login" action="Home.php" method="post">
 			  <div class="form-group">
 			    <label for="exampleInputEmail1">User ID</label>
-			    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter User ID">
+			    <input type="text" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter User ID">
 			    <small id="emailHelp" class="form-text text-muted">We'll never share your details with anyone else.</small>
 			  </div>
 			  <div class="form-group">
