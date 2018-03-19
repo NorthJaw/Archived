@@ -1,3 +1,16 @@
+<?php
+    require 'dbclass.php';
+    $db = new Db();
+    $toll_gate = $db->select("SELECT * FROM  `toll_data` ORDER BY RAND() LIMIT 1");
+
+    foreach ($toll_gate as $instance){
+        $tg_name = $instance['location'];
+        $tg_charge = $instance['charge'];
+    }
+
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -37,7 +50,7 @@
  <div class="card" id="Payment" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">Payment!</h5>
-    <p class="card-text">Pay amount: -- Rs at ------- toll gate</p>
+    <p class="card-text">Pay amount: <?php echo $tg_charge; ?> Rs at <?php echo $tg_name; ?> toll gate</p>
     <a href="#" class="card-link">Pay</a>
     <a href="#" class="card-link">Close</a>
   </div>
