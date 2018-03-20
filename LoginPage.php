@@ -1,3 +1,17 @@
+<?php
+
+    if(!empty($_GET['type']) &&  isset($_GET['type'])){
+
+        if ($_GET['type'] == 1){
+            echo "<script> alert(\"Wrong Credentials \"); </script>";
+        }elseif($_GET['type'] == 2){
+            echo "<script> alert(\"Invalid Login\");</script>";
+        }
+
+    }
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -22,12 +36,12 @@
 		<form id="Login" action="middlepage.php" method="post">
 			  <div class="form-group">
 			    <label for="exampleInputEmail1">User ID</label>
-			    <input type="text" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter User ID">
+			    <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter User ID">
 			    <small id="emailHelp" class="form-text text-muted">We'll never share your details with anyone else.</small>
 			  </div>
 			  <div class="form-group">
 			    <label for="exampleInputPassword1">Password</label>
-			    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+			    <input type="password" name ="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
 			  </div>
 			  <button type="submit" class="btn btn-primary">Submit</button>
 		</form>

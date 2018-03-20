@@ -12,6 +12,7 @@
     $user_data = $db->select("SELECT * FROM `alpr_data` WHERE `id` =" .$id);
 
 
+
 foreach ($user_data as $ins) {
     $user_name = $ins['name'];
     $user_address = $ins['address'];
@@ -67,6 +68,9 @@ foreach ($toll_gate as $instance){
             <a class="nav-link" href="#">Profile</a>
           </li>
             <li class="nav-item">
+                <a class="nav-link" href="addmoney.php">Add Money</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="logout.php">Logout</a>
             </li>
     </ul>
@@ -99,6 +103,21 @@ foreach ($toll_gate as $instance){
    <p class="card-text">Address: <?php echo $user_address ?></p>
  </div>
 </div>
+
+<div class="card" id="addMoney" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Add Money</h5>
+        <form id="Login" action="addmoney.php" method="post">
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input type="text" name="amount" class="form-control" id="amount" aria-describedby="emailHelp" placeholder="Enter Amount to add">
+                <small id="emailHelp" class="form-text text-muted">Amount will be directly added from your bank account.</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Money</button>
+        </form>
+    </div>
+</div>
+
 
 
 
