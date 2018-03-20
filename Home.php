@@ -29,6 +29,11 @@ foreach ($toll_gate as $instance){
     }
 
     $_SESSION['money_to_deduct'] = $tg_charge;
+    $_SESSION['location'] = $tg_name;
+
+    $id = $db->quote($id,"'");
+    $booms = $db->query("SELECT * FROM `history` WHERE `userid` =".$id." ORDER BY `timestamp` DESC LIMIT 10");
+
 ?>
 
 
@@ -95,6 +100,9 @@ foreach ($toll_gate as $instance){
 </div>
 
 
+
+
+
 <div class="card" id="Balance" style="width: 18rem;">
  <div class="card-body">
    <h5 class="card-title">Profile</h5>
@@ -118,7 +126,24 @@ foreach ($toll_gate as $instance){
     </div>
 </div>
 
+<div class="card" id="History" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Last 10 tolls</h5>
 
+        <?php
+
+        if(!empty($booms)){
+            echo "<table border='1'><tr><th>Toll Name</th><th>Amount Paid</th><th>Time</th>";
+            foreach($booms as $instance){
+                echo "<tr><td>".$instance['toll_name']."</td><td>".$instance['toll_charge']."</td><td>".$instance['timestamp']."</td></tr>";
+            }
+            $disp=0;
+        }
+
+        ?>
+
+    </div>
+</div>
 
 
     <!-- Optional JavaScript -->
