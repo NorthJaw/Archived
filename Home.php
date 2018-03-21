@@ -73,7 +73,7 @@ foreach ($toll_gate as $instance){
             <a class="nav-link" id = "Profile_Btn" href="#">Profile</a>
           </li>
             <li class="nav-item">
-                <a class="nav-link" id = "AddMoney_Btn" href="addmoney.php">Add Money</a>
+                <a class="nav-link" id = "AddMoney_Btn" href="#">Add Money</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="logout.php">Logout</a>
