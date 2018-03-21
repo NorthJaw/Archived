@@ -24,3 +24,12 @@
 #History{
 	display: none;
 }
+
+@media (max-width: 720px) {
+
+	.card{
+		margin-top: 15%;
+		margin-left: 0%;
+	}
+
+}
