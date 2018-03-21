@@ -129,7 +129,7 @@ foreach ($toll_gate as $instance){
 
 <div class="card" id="History" style="width: 18rem;">
     <div class="card-body">
-        <h5 class="card-title">Last 10 tolls</h5>
+        <h5 class="card-title">Last 10 transactions</h5>
 
         <?php
 
