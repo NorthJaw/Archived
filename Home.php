@@ -119,7 +119,7 @@ foreach ($toll_gate as $instance){
         <form id="Login" action="addmoney.php" method="post">
             <div class="form-group">
                 <label for="amount">Amount</label>
-                <input type="text" name="amount" class="form-control" id="amount" aria-describedby="emailHelp" placeholder="Enter Amount to add">
+                <input type="text" name="amount" class="form-control" id="amount" aria-describedby="emailHelp" placeholder="Enter Amt">
                 <small id="emailHelp" class="form-text text-muted">Amount will be directly added from your bank account.</small>
             </div>
             <button type="submit" class="btn btn-primary">Add Money</button>
