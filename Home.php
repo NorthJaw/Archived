@@ -61,19 +61,19 @@ foreach ($toll_gate as $instance){
 <!-- dark -->
     <ul class="nav nav-tabs bg-dark">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link active" id = "Home_Btn" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Balance</a>
+            <a class="nav-link" id = "Balance_Btn" href="#">Balance</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">History</a>
+            <a class="nav-link" id = "History_Btn" href="#">History</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Profile</a>
+            <a class="nav-link" id = "Profile_Btn" href="#">Profile</a>
           </li>
             <li class="nav-item">
-                <a class="nav-link" href="addmoney.php">Add Money</a>
+                <a class="nav-link" id = "AddMoney_Btn" href="addmoney.php">Add Money</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="logout.php">Logout</a>
@@ -103,7 +103,7 @@ foreach ($toll_gate as $instance){
 
 
 
-<div class="card" id="Balance" style="width: 18rem;">
+<div class="card" id="Profile" style="width: 18rem;">
  <div class="card-body">
    <h5 class="card-title">Profile</h5>
    <p class="card-text">Name: <?php echo $user_name ?></p>
@@ -111,6 +111,7 @@ foreach ($toll_gate as $instance){
    <p class="card-text">Address: <?php echo $user_address ?></p>
  </div>
 </div>
+
 
 <div class="card" id="addMoney" style="width: 18rem;">
     <div class="card-body">
@@ -151,6 +152,7 @@ foreach ($toll_gate as $instance){
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    <script src="Home.js"></script>
     <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
   </body>
 

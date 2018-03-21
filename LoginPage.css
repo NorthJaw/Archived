@@ -3,3 +3,25 @@
   margin-top: 15%;
   margin-left: 33%;
 }
+
+.card{
+	background-color: red;
+	margin-top: 0%;
+	margin-left: 40%;
+}
+
+#Balance{
+	display: none;
+}
+
+#Profile{
+	display: none;
+}
+
+#addMoney{
+	display: none;
+}
+
+#History{
+	display: none;
+}
