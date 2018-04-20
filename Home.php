@@ -34,6 +34,20 @@ foreach ($toll_gate as $instance){
 
     if ($flag == 1) {
       echo "Happy riding !!";
+      ?>
+      <style type = "text/css"> #Payment{
+        display : none;
+      }</style>
+      <?php
+    }
+
+    else
+    {
+      ?>
+      <style type = "text/css"> #NoPayment{
+        display : none;
+      }</style>
+      <?php
     }
 
     $_SESSION['money_to_deduct'] = $tg_charge;
@@ -100,6 +114,16 @@ foreach ($toll_gate as $instance){
 </div>
 
 
+<div class="card" id="NoPayment" style="width: 18rem;">
+ <div class="card-body">
+   <h5 class="card-title">Payment!</h5>
+   <p class="card-text">No payment due</p>
+   <a href="makepayment.php" class="card-link">Pay</a>
+   <a href="#" class="card-link">Close</a>
+ </div>
+</div>
+
+
 <div class="card" id="Balance" style="width: 18rem;">
  <div class="card-body">
    <h5 class="card-title">Account</h5>
@@ -161,7 +185,93 @@ foreach ($toll_gate as $instance){
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
     <script src="Home.js"></script>
-    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+
+
+    <script>
+
+        $(document).ready(function() {
+
+
+          $('body').bootstrapMaterialDesign();
+
+
+
+        });
+
+
+    </script>
+
+
+    <script>
+
+        var PayKey = <?php echo $flag ?>
+
+        $('#Home_Btn').click(function(){
+
+          if(PayKey == 1)
+          {
+            $('#NoPayment').show();
+            $('#Payment').hide();
+          }
+
+          else{
+            $('#Payment').show();
+            $('#NoPayment').hide();
+          }
+
+        	$('#Balance').hide();
+        	$('#Profile').hide();
+        	$('#addMoney').hide();
+        	$('#History').hide();
+        });
+
+
+        $('#Balance_Btn').click(function(){
+
+        	$('#Payment').hide();
+        	$('#NoPayment').hide();
+        	$('#Balance').show();
+        	$('#Profile').hide();
+        	$('#addMoney').hide();
+        	$('#History').hide();
+        });
+
+
+        $('#Profile_Btn').click(function(){
+
+        	$('#Payment').hide();
+        	$('#NoPayment').hide();
+        	$('#Balance').hide();
+        	$('#Profile').show();
+        	$('#addMoney').hide();
+        	$('#History').hide();
+        });
+
+        $('#AddMoney_Btn').click(function(){
+
+        	$('#Payment').hide();
+        	$('#NoPayment').hide();
+        	$('#Balance').hide();
+        	$('#Profile').hide();
+        	$('#addMoney').show();
+        	$('#History').hide();
+        });
+
+
+        $('#History_Btn').click(function(){
+
+        	$('#Payment').hide();
+        	$('#NoPayment').hide();
+        	$('#Balance').hide();
+        	$('#Profile').hide();
+        	$('#addMoney').hide();
+        	$('#History').show();
+        });
+
+
+    </script>
+
+
   </body>
 
 
