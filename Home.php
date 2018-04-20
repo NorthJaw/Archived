@@ -7,7 +7,7 @@
 
      $id = $_SESSION['id'];
 
-    $toll_gate = $db->select("SELECT * FROM  `toll_data` ORDER BY RAND() LIMIT 1");
+
 
     $user_data = $db->select("SELECT * FROM `alpr_data` WHERE `id` =" .$id);
 
@@ -20,12 +20,20 @@ foreach ($user_data as $ins) {
     $user_license = $ins['license'];
 }
 
+$id = $db->quote($id,"'");
 
+$toll_gate = $db->select("SELECT * FROM  `requests` WHERE `userid` =".$id." ORDER BY `timestamp` DESC LIMIT 1");
 
+$flag = 1;
 
 foreach ($toll_gate as $instance){
-        $tg_name = $instance['location'];
-        $tg_charge = $instance['charge'];
+        $flag = 0;
+        $tg_name = $instance['toll_name'];
+        $tg_charge = $instance['toll_charge'];
+    }
+
+    if ($flag == 1) {
+      echo "Happy riding !!";
     }
 
     $_SESSION['money_to_deduct'] = $tg_charge;
