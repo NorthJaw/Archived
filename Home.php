@@ -33,7 +33,7 @@ foreach ($toll_gate as $instance){
     }
 
     if ($flag == 1) {
-      echo "Happy riding !!";
+      
       ?>
       <style type = "text/css"> #Payment{
         display : none;
