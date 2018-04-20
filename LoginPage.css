@@ -3,3 +3,33 @@
   margin-top: 15%;
   margin-left: 33%;
 }
+
+.card{
+	margin-top: 15%;
+	margin-left: 40%;
+}
+
+#Balance{
+	display: none;
+}
+
+#Profile{
+	display: none;
+}
+
+#addMoney{
+	display: none;
+}
+
+#History{
+	display: none;
+}
+
+@media (max-width: 720px) {
+
+	.card{
+		margin-top: 25%;
+		margin-left: 15%;
+	}
+
+}
